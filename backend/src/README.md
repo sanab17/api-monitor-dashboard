@@ -8,7 +8,7 @@ Backend
 - Register APIs to monitor
 - Periodically ping them
 - Track:
-    Status (UP / DOWN)
+    Status (Active / Inactive)
     Response time
     Last checked
 
