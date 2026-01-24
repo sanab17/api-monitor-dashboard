@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import { performHealthChecks } from './services/healthCheckService';
 // import { monitoredApis } from './constants/apiRegistry';
@@ -12,11 +12,11 @@ app.use(cors());
 app.use(express.json());
 
 // Sample route
-app.get('/', (req, res) => {
+app.get('/', (_req: Request, res: Response) => {
   res.send('Hello, World!');
 });
 
-app.get('/health', (_req, res) => {
+app.get('/health', (_req: Request, res: Response) => {
   res.json({ status: 'Active', timestamp: new Date() });
 });
 

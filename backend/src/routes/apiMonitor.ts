@@ -1,10 +1,10 @@
-import {Router, Request, Response} from 'express';
+import { Router, Request, Response } from 'express';
 import { monitoredApis } from '../constants/apiRegistry';
 import { ApiTarget } from '../types/ApiTarget';
 
 const router = Router();
 
-router.get('/api-monitor', async (req: Request, res: Response) => {
+router.get('/api-monitor', async (_req: Request, res: Response) => {
     res.json(monitoredApis);
 });
 
