@@ -4,7 +4,7 @@ import { ApiTarget } from '../types/ApiTarget';
 
 const router = Router();
 
-router.get('/api-monitor', async (_req: Request, res: Response) => {
+router.get('/monitor', async (_req: Request, res: Response) => {
     res.json(monitoredApis);
 });
 
