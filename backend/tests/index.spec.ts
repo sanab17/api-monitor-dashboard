@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../src/index';
+import app from '../src/server';
 
 describe('Health Check', () => {
     it('should return health status', async () => {
@@ -8,5 +8,9 @@ describe('Health Check', () => {
         expect(response.body.status).toBe('Active');
         expect(response.body).toHaveProperty('timestamp');
         expect(response.body).toHaveProperty('status');
+    });
+
+    afterAll(() => {
+        jest.clearAllTimers();
     });
 });
