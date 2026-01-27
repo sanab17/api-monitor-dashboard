@@ -16,8 +16,7 @@ function Dashboard() {
 
         loadApiMonitors();
 
-        loadApiMonitors();
-        interval = window.setInterval(loadApiMonitors, 15000); // Refresh every 15 seconds
+        interval = window.setInterval(loadApiMonitors, 90000); // Refresh every 90 seconds
 
         return () => clearInterval(interval);
     }, []);

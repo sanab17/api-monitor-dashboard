@@ -41,7 +41,9 @@ export const startServer = () => {
   });
 
   // Start health checks interval
+  /*
   setInterval(() => {
     performHealthChecks();
   }, 10000);
+  */
 };
