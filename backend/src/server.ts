@@ -6,7 +6,15 @@ import { performHealthChecks } from './services/healthCheckService';
 const app = express();
 
 // Middleware
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: [
+    'https://api-monitor-dashboard.netlify.app',
+    'http://localhost:5173', // Vite dev server
+    'http://localhost:3000'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // Sample route
