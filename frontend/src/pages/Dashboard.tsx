@@ -12,6 +12,11 @@ function Dashboard() {
 
     // Fetch APIs on load
     useEffect(() => {
+        loadApiMonitors(); // TODO: Temporarily disabled auto-refresh
+    }, []);
+
+    /*
+    useEffect(() => {
         let interval: number;
 
         loadApiMonitors();
@@ -20,6 +25,7 @@ function Dashboard() {
 
         return () => clearInterval(interval);
     }, []);
+    */
 
     async function loadApiMonitors() {
         try {
