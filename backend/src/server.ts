@@ -19,7 +19,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Sample route
+// Sample routes
 app.get('/', (_req: Request, res: Response) => {
   res.send('Hello, World! API Monitoring Dashboard Backend');
 });
