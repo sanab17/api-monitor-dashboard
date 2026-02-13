@@ -15,7 +15,7 @@ export const dashboardApi = {
     async getServices() {
         const response = await fetch(`${DASHBOARD_API_BASE_URL}/api/dashboard/services`);
         if (!response.ok) {
-            throw new Error('Failed to fetch services');
+            throw new Error(`Failed to fetch services: ${response.status}`);
         }
         return response.json();
     },
@@ -31,11 +31,25 @@ export const dashboardApi = {
 
     // Fetches the list of active incidents affecting the services, including their status and impact
     async getIncidents(activeOnly = true) {
-        const response = await fetch(`${DASHBOARD_API_BASE_URL}/api/dashboard/incidents?activeOnly=${activeOnly}`);
+        const url = `${DASHBOARD_API_BASE_URL}/api/dashboard/incidents${activeOnly ? '?active=true' : ''}`;
+        const response = await fetch(url);
         if (!response.ok) {
-            throw new Error('Failed to fetch incidents');
+            throw new Error(`Failed to fetch incidents: ${response.status}`);
         }
-        return response.json();
+        // return response.json();
+
+        // Handle empty response
+        const text = await response.text();
+        if (!text) {
+            return [];  // Return empty array if no content
+        }
+
+        try {
+            return JSON.parse(text);
+        } catch (error) {
+            console.error('Failed to parse incidents JSON:', text);
+            return [];  // Return empty array on parse error
+        }
     },
 
     // Fetches the uptime history for a specific service, which can be used to display trends and historical performance
@@ -48,7 +62,7 @@ export const dashboardApi = {
     },
 
     // Adds a new service to be monitored, allowing users to specify the service name, category, URL, and description
-    async addService(serviceData: {name: string; category: string; url: string; description?: string}) {
+    async addService(serviceData: { name: string; category: string; url: string; description?: string }) {
         const response = await fetch(`${DASHBOARD_API_BASE_URL}/api/dashboard/services`, {
             method: 'POST',
             headers: {

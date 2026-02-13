@@ -34,6 +34,7 @@ function StatusDashboard() {
         async function loadData() {
             try {
                 setLoading(true);
+                /*
                 const [servicesData, incidentsData] = await Promise.all(
                     [
                         dashboardApi.getServices(),
@@ -43,6 +44,21 @@ function StatusDashboard() {
 
                 setServices(servicesData);
                 setIncidents(incidentsData);
+                */
+
+                // Load services first, then incidents to ensure we have service data for incident display
+                const servicesData = await dashboardApi.getServices();
+                setServices(servicesData);
+
+                // Load incidents with error handling to prevent total failure if incidents endpoint has issues
+                try {
+                    const incidentsData = await dashboardApi.getIncidents();
+                    setIncidents(incidentsData);
+                } catch (incidentError) {
+                    console.warn('Failed to load incidents, using empty array:', incidentError);
+                    setIncidents([]);
+                }
+
                 setLastUpdated(new Date());
             } catch (error) {
                 console.error('Error loading dashboard data:', error);
