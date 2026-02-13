@@ -127,7 +127,7 @@ router.get('/incidents', (req: Request, res: Response) => {
                 ? serviceStore.getActiveIncidents() 
                 : serviceStore.getAllIncidents
 
-        res.json(incidents);
+        res.json(incidents || []); // Return empty array if no incidents found
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch incidents' });
     }
