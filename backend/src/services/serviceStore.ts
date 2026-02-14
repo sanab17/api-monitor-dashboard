@@ -100,11 +100,11 @@ class ServiceStore {
             if (!categories.has(service.category)) {
                 categories.set(service.category, []);
             }
-            categories.get(service.category)!.push(service);
+            categories.get(service.category)!.push(service); // Non-null assertion since we just initialized it
         });
 
         return Array.from(categories.entries()).map(
-            ([category, services]) => ({
+            ([category, services]) => ({ // Map to ServiceCategory format
                 category,
                 services
             })
