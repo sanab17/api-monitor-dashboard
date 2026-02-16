@@ -362,10 +362,9 @@ Built with Material-UI for the component library
 Inspired by industry-standard status pages like Atlassian Status
 Thanks to the open-source community
 
-<div align="center">
-⭐ Star this repository if you find it helpful!
-Made with ❤️ and ☕ by Sana Bulbule
- 
-· Report Bug / Request Feature: https://github.com/sanab17/api-monitor-dashboard/issues
+· Report Bug / Request Feature: 
+https://github.com/sanab17/api-monitor-dashboard/issues
 
+<div align="center">
+⭐ Star this repository if you find it helpful! Made with ❤️ and ☕ by Sana Bulbule
 </div>
