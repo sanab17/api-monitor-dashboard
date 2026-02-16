@@ -10,7 +10,8 @@ import {
     Grid,
     CircularProgress,
     Divider,
-    Stack
+    Stack,
+    Button
 } from '@mui/material';
 // import Grid from '@mui/material/Grid2';
 import {
@@ -19,7 +20,8 @@ import {
     Error,
     Cancel,
     Assessment,
-    AccessTime
+    AccessTime,
+    GitHub
 } from '@mui/icons-material';
 import { dashboardApi } from '../api/dashboardApi';
 import type { ServiceCategory, Incident } from '../types/service';
@@ -145,6 +147,14 @@ function StatusDashboard() {
     return (
         <Box sx={{ minHeight: '100vh', bgcolor: 'grey.50', pb: 4 }}>
             {/* Header */}
+            <Button
+                href="https://github.com/sanab17/api-monitor-dashboard"
+                target="_blank"
+                startIcon={<GitHub />}
+                sx={{ ml: 2 }}
+            >
+                View Source
+            </Button>
             <Paper sx={{ borderRadius: 0, mb: 3 }} elevation={1}>
                 <Container maxWidth='lg' sx={{ py: 3 }}>
                     <Box display='flex' justifyContent='space-between' alignItems='center'>

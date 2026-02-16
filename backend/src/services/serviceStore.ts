@@ -21,7 +21,7 @@ class ServiceStore {
                 url: 'https://auth.example.com/health',
                 description: 'Handles user authentication and authorization.',
                 status: ServiceStatus.OPERATIONAL,
-                uptime: 99.99,
+                uptime: 90.99,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -32,7 +32,7 @@ class ServiceStore {
                 url: 'https://payments.example.com/health',
                 description: 'Handles all payment transactions and processing.',
                 status: ServiceStatus.DEGRADED,
-                uptime: 98.50,
+                uptime: 95.50,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -54,16 +54,38 @@ class ServiceStore {
                 url: 'https://db-monitor.example.com/health',
                 description: 'Monitors the health of the primary database cluster.',
                 status: ServiceStatus.OPERATIONAL,
-                uptime: 99.99,
+                uptime: 85.99,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: '5',
+                name: 'GitHub API',
+                category: 'External APIs',
+                url: 'https://api.github.com/status',
+                description: 'GitHub REST API Status',
+                status: ServiceStatus.OPERATIONAL,
+                uptime: 70.99,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: '6',
+                name: 'Google DNS',
+                category: 'Infrastructure',
+                url: 'https://dns.google',
+                description: 'Google Public DNS',
+                status: ServiceStatus.OPERATIONAL,
+                uptime: 90.99,
                 createdAt: new Date(),
                 updatedAt: new Date()
             }
         ];
 
         sampleServices.forEach(service => {
-                this.services.set(service.id, service);
-                this.generateUptimeHistory(service.id, service.uptime);
-            }
+            this.services.set(service.id, service);
+            this.generateUptimeHistory(service.id, service.uptime);
+        }
         );
     };
 
@@ -89,7 +111,7 @@ class ServiceStore {
 
     // Service CRUD operations
     public getAllServices(): Service[] {
-        return Array.from(this.services.values());  
+        return Array.from(this.services.values());
     };
 
     // Select services by category
