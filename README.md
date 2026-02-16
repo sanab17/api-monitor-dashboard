@@ -3,73 +3,81 @@
 A production-ready full-stack application for monitoring API health, service status, and performance metrics. Built with modern technologies and deployed on cloud infrastructure.
 
 ## Live Demo
+
 - Frontend: https://api-monitor-dashboard.netlify.app/
 - Backend: https://api-monitor-dashboard-6ah2.onrender.com/api/monitor
 
-✨ Features
-Core Functionality
+## ✨ Features
 
-🔄 Real-time Monitoring - Automated health checks every 15 seconds
-📊 Performance Tracking - Response time tracking and uptime calculations
-🎯 Multi-Service Support - Monitor multiple APIs and services simultaneously
-🏷️ Service Categorization - Organize services by type (Core, API, Infrastructure)
-🔔 Status Indicators - Visual health status (Operational, Degraded, Partial Outage, Major Outage)
+### Core Functionality
 
-Technical Highlights
+- 🔄 **Real-time Monitoring** - Automated health checks every 15 seconds
+- 📊 **Performance Tracking** - Response time tracking and uptime calculations
+- 🎯 **Multi-Service Support** - Monitor multiple APIs and services simultaneously
+- 🏷️ **Service Categorization** - Organize services by type (Core, API, Infrastructure)
+- 🔔 **Status Indicators** - Visual health status (Operational, Degraded, Partial Outage, Major Outage)
 
-✅ Full TypeScript - End-to-end type safety
-✅ Material-UI Design - Professional, enterprise-grade UI components
-✅ RESTful API - Clean, well-structured backend architecture
-✅ Incident Tracking - Automatic detection and logging of service issues
-✅ CORS Configured - Secure cross-origin resource sharing
-✅ Error Handling - Robust error management and retry mechanisms
-✅ Responsive Design - Works seamlessly on desktop, tablet, and mobile
+### Technical Highlights
 
-DevOps
+- ✅ **Full TypeScript** - End-to-end type safety
+- ✅ **Material-UI Design** - Professional, enterprise-grade UI components
+- ✅ **RESTful API** - Clean, well-structured backend architecture
+- ✅ **Incident Tracking** - Automatic detection and logging of service issues
+- ✅ **CORS Configured** - Secure cross-origin resource sharing
+- ✅ **Error Handling** - Robust error management and retry mechanisms
+- ✅ **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
 
-🚀 CI/CD Pipeline - Automated deployments
-☁️ Cloud Hosted - Frontend on Netlify, Backend on Render
-📈 Scalable Architecture - Ready for production workloads
+### DevOps
 
-🛠️ Tech Stack
+- 🚀 **CI/CD Pipeline** - Automated deployments
+- ☁️ **Cloud Hosted** - Frontend on Netlify, Backend on Render
+- 📈 **Scalable Architecture** - Ready for production workloads
 
-Frontend
+## 🛠️ Tech Stack
 
-React 18 for UI framework
-TypeScript for Type safety and better DX
-Material-UI (MUI) for component library and design system
-Vite for fast build tool and dev server
-CSS3 for styling
-Fetch API for HTTP requests
+### Frontend
 
-Backend
+- React 18 for UI framework
+- TypeScript for Type safety and better DX
+- Material-UI (MUI) for component library and design system
+- Vite for fast build tool and dev server
+- CSS3 for styling
+- Fetch API for HTTP requests
 
-Node.js for runtime environment
-Express.js for web framework
-TypeScript for type-safe backend code
-Axios for HTTP client for health checks
-CORS for cross-origin security
+### Backend
 
-DevOps & Deployment
+- Node.js for runtime environment
+- Express.js for web framework
+- TypeScript for type-safe backend code
+- Axios for HTTP client for health checks
+- CORS for cross-origin security
 
-Netlify - Frontend hosting with automatic deployments
-Render - Backend hosting with automatic deployments
-Git/GitHub - Version control and CI/CD triggers
-npm - Package management
+### DevOps & Deployment
 
-🚀 Getting Started
+- Netlify - Frontend hosting with automatic deployments
+- Render - Backend hosting with automatic deployments
+- Git/GitHub - Version control and CI/CD triggers
+- npm - Package management
 
-Prerequisites
-node >= 18.0.0
-npm >= 9.0.0
+## 🚀 Getting Started
 
-Installation & Setup
+### Prerequisites
 
-1. Clone the repository
+- node >= 18.0.0
+- npm >= 9.0.0
+
+### Installation & Setup
+
+#### 1. Clone the repository
+
+```bash
 git clone https://github.com/sanab17/api-monitor-dashboard.git
 cd api-monitor-dashboard
+```
 
-2. Backend Setup
+#### 2. Backend Setup
+
+```bash
 cd backend
 npm install
 
@@ -78,14 +86,20 @@ echo "PORT=3000" > .env
 
 # Start development server
 npm run dev
+```
 
-Backend will run on http://localhost:3000
+Backend will run on `http://localhost:3000`
 
 Test the backend:
+
+```bash
 curl http://localhost:3000/health
 curl http://localhost:3000/api/dashboard/services
+```
 
-3. Frontend Setup
+#### 3. Frontend Setup
+
+```bash
 cd frontend
 npm install
 
@@ -94,25 +108,32 @@ echo "VITE_API_BASE_URL=http://localhost:3000" > .env
 
 # Start development server
 npm run dev
+```
 
-Frontend will run on http://localhost:5173
+Frontend will run on `http://localhost:5173`
 
-4. Run Development Servers
+#### 4. Run Development Servers
 
-Terminal 1 - Backend:
+**Terminal 1 - Backend:**
+```bash
 cd backend
 npm run dev
+```
 
-Terminal 2 - Frontend:
+**Terminal 2 - Frontend:**
+```bash
 cd frontend
 npm run dev
+```
 
-6. Access the Application
-* Frontend: http://localhost:5173
-* Backend: http://localhost:3000
+#### 5. Access the Application
 
-📁 Project Structure
+- Frontend: http://localhost:5173
+- Backend: http://localhost:3000
 
+## 📁 Project Structure
+
+```
 api-monitor-dashboard/
 ├── backend/
 │   ├── src/
@@ -144,20 +165,25 @@ api-monitor-dashboard/
 │   ├── package.json
 │   └── vite.config.ts
 └── README.md
+```
 
-🌐 API Documentation
+## 🌐 API Documentation
 
-Base URL
+### Base URL
 
-Development: http://localhost:3000
-Production: https://api-monitor-dashboard-6ah2.onrender.com
+- Development: http://localhost:3000
+- Production: https://api-monitor-dashboard-6ah2.onrender.com
 
-Endpoints
+### Endpoints
 
-Get Dashboard Summary
+#### Get Dashboard Summary
+
+```
 GET /api/dashboard/summary
+```
 
-Response:
+**Response:**
+```json
 {
   "totalServices": 4,
   "operationalServices": 2,
@@ -166,11 +192,16 @@ Response:
   "activeIncidents": 2,
   "overallStatus": "degraded"
 }
+```
 
-Get All Services
+#### Get All Services
+
+```
 GET /api/dashboard/services
+```
 
-Response:
+**Response:**
+```json
 [
   {
     "category": "Core Services",
@@ -186,11 +217,16 @@ Response:
     ]
   }
 ]
+```
 
-Get Active Incidents
+#### Get Active Incidents
+
+```
 GET /api/dashboard/incidents?active=true
+```
 
-Response:
+**Response:**
+```json
 [
   {
     "id": "1",
@@ -201,73 +237,87 @@ Response:
     "startedAt": "2026-01-30T07:30:00Z"
   }
 ]
+```
 
-Add New Service
+#### Add New Service
+
+```
 POST /api/dashboard/services
 Content-Type: application/json
+```
 
-Request Body:
+**Request Body:**
+```json
 {
   "name": "My API",
   "category": "API Services",
   "url": "https://api.example.com/health",
   "description": "My API endpoint"
 }
+```
 
-🧪 Testing
+## 🧪 Testing
 
-Backend Tests:
+### Backend Tests
+
+```bash
 cd backend
 npm test
+```
 
-Frontend Tests
+### Frontend Tests
+
+```bash
 cd frontend
 npm test
+```
 
-🌐 Deployment
+## 🌐 Deployment
 
-Frontend (Netlify)
+### Frontend (Netlify)
 
-1. Connect Repository
-- Log in to Netlify
-- New site from Git → Select api-monitor-dashboard
+1. **Connect Repository**
+   - Log in to Netlify
+   - New site from Git → Select api-monitor-dashboard
 
+2. **Build Settings**
+   - Base directory: `frontend`
+   - Build command: `npm run build`
+   - Publish directory: `frontend/dist`
 
-2. Build Settings
-- Base directory: frontend
-- Build command: npm run build
-- Publish directory: frontend/dist
+3. **Environment Variables**
+   - `VITE_API_BASE_URL=https://api-monitor-dashboard-6ah2.onrender.com`
 
-3. Environment Variables
-- VITE_API_BASE_URL=https://api-monitor-dashboard-6ah2.onrender.com
+4. **Deploy**
+   - Click "Deploy site"
+   - Auto-deploys on every push to main
 
-4. Deploy
-- Click "Deploy site"
-- Auto-deploys on every push to main
+### Backend (Render)
 
-Backend (Render)
+1. **Connect Repository**
+   - Log in to Render
+   - New Web Service → Connect api-monitor-dashboard
 
-1. Connect Repository
-- Log in to Render
-- New Web Service → Connect api-monitor-dashboard
+2. **Build Settings**
+   - Root directory: `backend`
+   - Build command: `npm install && npm run build`
+   - Start command: `npm start`
 
-2. Build Settings
-- Root directory: backend
-- Build command: npm install && npm run build
-- Start command: npm start
+3. **Environment Variables**
+   - `PORT=3000`
+   - `NODE_ENV=production`
 
-3. Environment Variables
-- PORT=3000
-- NODE_ENV=production
+4. **Deploy**
+   - Click "Create Web Service"
+   - Auto-deploys on every push to main
 
-4. Deploy
-- Click "Create Web Service"
-- Auto-deploys on every push to main
+## 🔧 Configuration
 
-🔧 Configuration
+### Adding New Services to Monitor
 
-Adding New Services to Monitor
-Edit backend/src/services/serviceStore.ts:
+Edit `backend/src/services/serviceStore.ts`:
+
+```typescript
 const sampleServices: Service[] = [
   {
     id: '1',
@@ -282,13 +332,21 @@ const sampleServices: Service[] = [
   },
   // Add more services...
 ];
+```
 
-Customizing Health Check Interval
-Edit backend/src/services/healthCheckService.ts:
+### Customizing Health Check Interval
+
+Edit `backend/src/services/healthCheckService.ts`:
+
+```typescript
 private checkInterval: number = 15000; // Change to desired interval (ms)
+```
 
-Customizing Theme Colors
-Edit frontend/src/App.tsx:
+### Customizing Theme Colors
+
+Edit `frontend/src/App.tsx`:
+
+```typescript
 const theme = createTheme({
   palette: {
     primary: {
@@ -297,74 +355,92 @@ const theme = createTheme({
     // ... other customizations
   },
 });
+```
 
-🐛 Troubleshooting
+## 🐛 Troubleshooting
 
-Services Not Showing
+### Services Not Showing
+
 1. Check browser console for errors (F12)
-2. Verify VITE_API_BASE_URL is set correctly in Netlify
-3. Check backend is running: curl https://api-monitor-dashboard-6ah2.onrender.com/health
+2. Verify `VITE_API_BASE_URL` is set correctly in Netlify
+3. Check backend is running: `curl https://api-monitor-dashboard-6ah2.onrender.com/health`
 4. Verify CORS allows your frontend domain
 
-CORS Errors
-Update backend/src/app.ts:
+### CORS Errors
+
+Update `backend/src/app.ts`:
+
+```typescript
 app.use(cors({
   origin: ['https://your-netlify-domain.netlify.app'],
   credentials: true
 }));
+```
 
-Build Errors
+### Build Errors
 
-Clear node_modules: rm -rf node_modules && npm install
-Clear build cache: rm -rf dist && npm run build
+Clear node_modules:
+```bash
+rm -rf node_modules && npm install
+```
 
-🗺️ Roadmap / Future Enhancements
+Clear build cache:
+```bash
+rm -rf dist && npm run build
+```
 
-Add authentication for admin panel
-Implement database persistence (PostgreSQL/MongoDB)
-Add email/SMS notifications for incidents
-Historical data visualization with charts
-Support for custom health check intervals per service
-Webhook notifications
-Public status page (read-only view)
-Performance metrics dashboard
-SLA tracking and reporting
+## 🗺️ Roadmap / Future Enhancements
 
-🤝 Contributing
+- Add authentication for admin panel
+- Implement database persistence (PostgreSQL/MongoDB)
+- Add email/SMS notifications for incidents
+- Historical data visualization with charts
+- Support for custom health check intervals per service
+- Webhook notifications
+- Public status page (read-only view)
+- Performance metrics dashboard
+- SLA tracking and reporting
+
+## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
 
 1. Fork the repository
-2. Create a feature branch (git checkout -b feature/AmazingFeature)
-3. Commit your changes (git commit -m 'Add some AmazingFeature')
-4. Push to the branch (git push origin feature/AmazingFeature)
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 Please ensure:
 
-Code follows existing style
-All tests pass
-Add tests for new features
-Update documentation as needed
+- Code follows existing style
+- All tests pass
+- Add tests for new features
+- Update documentation as needed
 
-📄 License
+## 📄 License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-👤 Author
-Sana Bulbule
+## 👤 Author
 
-GitHub: @sanab17
-LinkedIn: https://www.linkedin.com/in/sanabulbule/
+**Sana Bulbule**
 
-🙏 Acknowledgments
+- GitHub: [@sanab17](https://github.com/sanab17)
+- LinkedIn: [https://www.linkedin.com/in/sanabulbule/](https://www.linkedin.com/in/sanabulbule/)
 
-Built with Material-UI for the component library
-Inspired by industry-standard status pages like Atlassian Status
-Thanks to the open-source community
+## 🙏 Acknowledgments
 
-· Report Bug / Request Feature: 
-https://github.com/sanab17/api-monitor-dashboard/issues
+- Built with Material-UI for the component library
+- Inspired by industry-standard status pages like Atlassian Status
+- Thanks to the open-source community
+
+---
+
+**Report Bug / Request Feature:** [GitHub Issues](https://github.com/sanab17/api-monitor-dashboard/issues)
 
 <div align="center">
+
 ⭐ Star this repository if you find it helpful! Made with ❤️ and ☕ by Sana Bulbule
+
 </div>
